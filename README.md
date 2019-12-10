@@ -1,5 +1,5 @@
 # furry-couscous
-An experiment in learning SQL, Bash & Python.
+An experiment in learning SQL, Git, Bash & Python.
 
 This is a place where I put stuff I like, that works, that's cleverly designed and well, that works.
 
