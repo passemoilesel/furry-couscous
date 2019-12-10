@@ -3,7 +3,7 @@ import phoenixdb.cursor
 import pandas as pd
 from sqlalchemy import create_engine
 
-# TODO: 1. Use SQLAlchemy. 2. Open up a connection to MySQL. 3. Write the "shortened link" dataframe to a table in MySQL.
+# TODO: 1. Remove [index] column in the "shortened link" dataframe. 2. Write the "shortened link" dataframe to a table in MySQL.  
 
 
 def return_connection_string(database_name, database_user, database_password, database_host, database_port):
@@ -28,7 +28,7 @@ def return_connection_object(database_name, database_user, database_password, da
         print(e)
 
 
-# """Harcoded URL to BIDW MySQL. Must be parameterized."""
+"""Harcoded URL to BIDW MySQL. Must be parameterized."""
 mysql_conn = return_connection_object(
     '?', '?', '?', '?', '?')
 
@@ -65,7 +65,6 @@ try:
 
         """Presenting the whole dataframe."""
         if not get_shortlinks_df.empty:
-            # print(get_shortlinks_df.to_string(index=False))
             get_shortlinks_df.to_sql('ShortenedLinksForOutgoingMessages',
                                      mysql_conn, if_exists='append')
 
